@@ -1,0 +1,21 @@
+jenkins-image
+=============
+
+first - creating volume
+$ docker volume create --name jenkins_home
+
+then - starting up docker env 
+$ docker-compose up -d
+
+
+login to EC2Instance
+====================
+$ ssh -i "admin.pem" ec2-user@ec2-35-178-202-236.eu-west-2.compute.amazonaws.com
+$ sudo su
+ 
+jenkins console PWD located at : /var/lib/docker/volumes/3c8cce0230e60f4a76085bf463a4791a02068543f85ecdbcec86ee0f0b27479a/_data/secrets
+ a47142fd1a66476db574063694a95678
+ 
+ Viewing Groups 
+ ===================
+  cat /etc/group

@@ -1,0 +1,63 @@
+#Build docker image from DockerFile 
+
+docker build -t zoharngo/todobackend-base . 
+docker build -t todobackend-dev -f docker/dev/DockerFile .
+
+docker images -f dangling=true
+
+docker images -a
+
+docker images -a | grep "image id" | awk '{print $3}' | xargs docker rmi
+
+
+# running docker containers
+
+--rm -> remove container once it stoped
+
+docker run --rm zoharn/todobackend-base ps <- Dispaly container process id
+docker run --rm todobackend-dev 
+
+time -> to check how much time took for tests to be completed 
+time docker run --rm todobackend-dev 
+
+# Creating volume container for cacheing to acclaerate perfomance once creating the dev-container
+
+ 1. docker run -v /tmp/cache:/cache --entrypoint true --name cache todobackend-dev
+ 2. time docker run --rm --volumes-from cache todobackend-dev 
+ 
+ NOTE: we can add -e flag to setup DJANGO_SETTINGS_MODULE=todobackend.settings.test 
+ to refer the test settings against mysql database.
+  
+#list running dockers conatiner
+docker ps -a  
+
+
+#!/bin/bash
+# Delete all containers
+docker rm $(docker ps -a -q)
+# Delete all images
+docker rmi $(docker images -q)
+
+
+###### CONNECT TO CONTAINER #######
+ docker exec -it release_app_1 /bin/bash
+ 
+### Removing dangling images ######
+docker rmi $(docker images -f dangling=true -q)
+
+### Docker volume ######
+docker volume ls
+docker volume ls -f dangling=true
+docker volume rm $(docker volume ls -f dangling=true -q)
+
+#### To rm conatiner with it volume ####
+
+#### Docker Container restart #####
+docker container restart -t 5 docker-jenkins_jenkins_1 
+
+
+
+
+
+
+

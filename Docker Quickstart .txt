@@ -1,0 +1,138 @@
+
+-- installing docker-compose --
+
+1 . sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+2 . sudo chmod +x /usr/local/bin/docker-compose
+
+
+
+-- installing docker-ce --
+
+1 . sudo sh -c 'echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" >> /etc/apt/sources.list.d/docker.list'
+
+2 . cat /etc/apt/sources.list.d/docker.list
+
+3 . curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+4 . sudo apt-get update
+
+4 . sudo apt install docker-ce
+
+-- test docker by running following --
+
+sudo docker run hello-world
+
+If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
+
+sudo usermod -aG docker ${USER}
+To apply the new group membership, log out of the server and back in, or type the following:
+
+su - ${USER}
+You will be prompted to enter your user's password to continue.
+
+Confirm that your user is now added to the docker group by typing:
+
+id -nG
+
+-- installing python 2.7 --
+
+1. sudo apt install python-minimal 
+
+2. python --version
+
+
+-- installing python-pip --
+
+1. sudo apt update
+
+2. sudo apt install python-pip
+
+3. sudo pip install -U pip 
+
+Close open new terminal to change take affect 
+
+4. pip --version
+
+-- installing ansible -- 
+
+1 . sudo -H pip install ansible --upgrade
+
+
+-- installing dependecies for AWS --
+
+1 . sudo -H pip install boto boto3
+
+
+-- installing AWSCLI -- 
+
+1 . sudo -H pip install awscli
+
+
+-- installing git --
+
+1 .  sudo apt install git
+
+--installing django --
+
+1. pip install django==1.11
+
+2. django-admin startproject todobackend
+
+# To be able to run virtualenv with non root user on linux/ubuntu
+sudo chmod -R o+rwx /todobackend
+
+cd src
+python manage.py startapp todo
+# For creaing makemigrations files after building model and serializtion and views
+python manage.py makemigrations todo
+# For performing migrate 
+python manage.py migrate
+
+
+# To be able to create connection from windows mechine running MySQL server with python 2.7
+# installing mysql connector wheel to be able to connect mysqldb from python2.7
+
+1 . download https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient
+2 . pip install mysqlclient-1.3.13-cp27-cp27m-win_amd64
+
+#guide for install mysql server on ubuntu 18.0.4
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+
+
+#tree /F => command like tree to use in powershell 
+
+# to able to configure vscode with python workspace files
+jedi enabled to set vscode files autocomplete 
+
+
+# Create new db and user for App client connection
+
+mysql> create database todobackend;
+mysql> grant all privileges on *.* to 'todo'@'localhost' identified by 'password';
+
+sudo apt update
+sudo apt install libmysqlclient-dev
+(venv) pip install mysql-python
+
+
+# After creating unit test suite in order to run unitest need to run following 
+python manage.py test
+
+
+# if we want to test against different setting.py run following :
+python .\manage.py test --settings=todobackend.settings.test
+
+# start/stop mysqlserver
+mysql.server start/stop
+
+# packages for improving test results
+pip install django-nose
+pip install pinocchio
+pip install coverage
+
+
+
+
+
+

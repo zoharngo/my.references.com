@@ -1,0 +1,5 @@
+WEBPACK ISSUES
+
+I have the same issue. After some research, I followed a solution what I found on this stackoverflow.
+
+Using rm -rf ~/.pm2 and it worked.

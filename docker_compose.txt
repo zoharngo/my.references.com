@@ -1,0 +1,23 @@
+# running docker-compose file
+	docker-compose up <service_name>
+<service_name>: the main service from the docker-compose file to start building the test environment 
+
+
+# Show the state of each container that has benn created by docker-compose
+docker-compose ps
+
+# Show the log of the spesific container
+docker-compose logs <container-name>
+
+# to remove all docker-compose containers
+
+docker-compose kill
+docker-compose rm -f
+
+# to rebuild docker-compose after changes 
+
+docker-compose build
+
+
+
+

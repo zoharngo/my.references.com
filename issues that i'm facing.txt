@@ -1,0 +1,8 @@
+
+ - problem 
+#Django not finding tests and run 0 test in 0s 
+
+- soultion 
+#we need to specify test module
+	python manage.py test <module_name> <other options>
+	ex : python manage.py test todo.tests --settings=todobackend.settings.test

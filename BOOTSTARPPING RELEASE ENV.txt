@@ -1,0 +1,6 @@
+
+### BOOTSTARPPING RELEASE ENV ####
+
+docker-compose run --rm app manage.py collectstatic --no-input 
+docker-compose run --rm app manage.py mig --no-input 
+ 

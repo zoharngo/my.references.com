@@ -1,0 +1,14 @@
+
+#### Git command ####
+git rev-parse --short HEAD => get the latest commit hash in short format . 
+git tag --point-at HEAD => get latest git tag if there is one.
+
+
+####To push a single tag####
+
+git push origin <tag_name>
+And the following command should push all tags (not recommended):
+
+git push --tags
+
+git grep <module_name>

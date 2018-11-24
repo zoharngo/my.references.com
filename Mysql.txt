@@ -1,0 +1,15 @@
+#MYSQL command 
+mysql> show databases;
+mysql> use <db_name>;
+mysql> show tables;
+mysql> select * from todo_todoitem limit 10;
+
+
+# To check MySqlstatus.
+
+$ systemctl status mysql.service
+
+# To startup MySql Server service
+sudo systemctl start mysql
+
+

@@ -1,0 +1,39 @@
+[
+    {
+        "restaurant_name": "Amora mio",
+        "restaurant_type": "italian",
+        "phone": "+(972) 3524 4040",
+        "location": {
+			"coordinates": "32.083495/34.781631",
+			"address": ""	
+		}
+    },
+    {
+        "restaurant_name": "Hudson",
+        "restaurant_type": "Grill",
+        "phone": "+(972) 3644 4733",
+		"location": {
+			"coordinates": "32.109805/34.840232",
+			"address": ""	
+		}
+    },
+    {
+        "restaurant_name": "Humongous",
+        "restaurant_type": "Burger",
+        "phone": "+(972) 9894 3656",
+		"location": {
+			"coordinates": "32.167599/34.928853",
+			"address": ""	
+		}
+    },
+    {
+        "restaurant_name": "Giraffe",
+        "restaurant_type": "Asian",
+        "phone": "+(972) 3691 6294",
+		"location": {
+			"coordinates": "32.0769924/34.7811794",
+			"address": ""	
+		}
+    }
+]
+

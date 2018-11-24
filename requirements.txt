@@ -1,0 +1,7 @@
+
+#Creating requirement.txt file
+
+#Activate venv 
+. venv/bin/activate
+cd src
+pip freeze > requirement.txt

@@ -1,0 +1,28 @@
+
+Process:
+########################################
+
+To list all Linux processes with some extra information about its origin, use this command:
+
+$ ps -ef -A
+
+-----------------------------------------
+Using Grep to List Node Processes
+You can also list Node processes only with a grep search:
+
+$ ps -ef | grep node
+$ ps aux | grep node
+-----------------------------------------
+
+Let us assume that the pid is 1234, you would kill it with:
+
+$ kill 1234
+
+-----------------------------------------
+
+Stop All Node Processes
+In the event you want to kill all Node processes at once:
+
+$ pkill -f node
+$ killall node
+$ killall -s KILL node

@@ -1,0 +1,64 @@
+#Find some information
+#To find out all services that have been run at startup:
+
+
+# this will show all services that has been loaded at boot and are active now. If you want to get a list of all services no matter they are active or not:
+systemctl list-units --type service
+
+# Another thing you can do is to run:
+systemctl list-units --type service --all
+
+# then hit / and search for mongodb see what service/target depends on it and runs it.
+systemctl list-dependencies --type service
+
+
+#Also you can run :
+
+locate mongodb.service
+
+#Which produces something like:
+
+/lib/systemd/system/multi-user.target.wants/mongodb.service
+
+#then you will know that it's being started as a part of multi-user target, alternative to this is:
+
+$ systemctl cat mongodb.service | grep -i wantedby
+
+WantedBy=multi-user.target
+
+
+# on ubunto the todobackend-client need to run grunt menually in order the webserver will have the necceceery dependencies
+
+
+
+# To Completely Remove packages from ubunto 'apt' 
+sudo apt remove --purge <package-name>
+
+
+tree -L 1
+echo "# todobackend-base" >> README.md
+
+#The command du "summarizes disk usage of each FILE, recursively for directories," e.g.,
+
+du -hs /path/to/directory
+
+sudo df -h /
+
+-h is to get the numbers "human readable", e.g. get 140M instead of 143260 (size in KBytes)
+-s is for summary (otherwise you'll get not only the size of the folder but also for everything in the folder separately)
+
+chgrp usera /opt/test/abcd
+chmod g=rwx /opt/test/abcd
+
+id -Gn
+which is equivalent to groups utility which has been obsoleted on Unix (as per Unix manual).
+
+On macOS and Unix, the command id -p is suggested for normal interactive.
+
+Explanation of the parameters:
+
+-G, --groups - print all group IDs
+
+-n, --name - print a name instead of a number, for -ugG
+
+-p - Make the output human-readable.
