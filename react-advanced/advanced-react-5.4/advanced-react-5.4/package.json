@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node",
     "webpack": "webpack -wd",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "babel": {
     "presets": [
@@ -42,6 +44,8 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
-    "webpack": "^2.6.1"
-  }
+    "webpack": "^2.6.1",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
